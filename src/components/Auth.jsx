@@ -1,15 +1,11 @@
-import { Link } from 'react-router-dom';
-
-// src/pages/LoginPage.jsx
+// src/components/Auth.jsx
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient'; // Make sure the path is correct relative to this file
-import { useNavigate } from 'react-router-dom'; // We can use navigate for extra control if needed, but router handles redirect here
+import { supabase } from '../supabaseClient'; // Import our supabase client
 
-function LoginPage() {
+function Auth() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const navigate = useNavigate(); // Not strictly needed due to App.jsx redirect logic, but good to know
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,19 +18,16 @@ function LoginPage() {
       });
 
       if (error) throw error;
-
-      // If login is successful, the onAuthStateChange listener in App.jsx
-      // will detect the session and the router will redirect to /app.
-      // No explicit navigate() needed here because App.jsx handles it!
-      console.log('Login successful, App.jsx useEffect should redirect');
+      alert('Logged in successfully!'); // Simple success feedback
 
     } catch (error) {
-      console.error('Login Error:', error);
       alert(error.error_description || error.message); // Show error to the user
     } finally {
       setLoading(false);
     }
   };
+
+  // We can add a handleSignup later!
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-pastel-blue p-4"> {/* Example Tailwind background */}
@@ -73,8 +66,9 @@ function LoginPage() {
           </button>
         </form>
 
+        {/* We can add a link/button here later to toggle to a signup form */}
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account? <a href="/signup" className="font-medium text-pastel-purple hover:text-pastel-purple-dark">Sign Up</a> {/* Link to Signup */}
+          Don't have an account? {/** Add link/button here */}
         </p>
 
       </div>
@@ -82,5 +76,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
-  
+export default Auth;
