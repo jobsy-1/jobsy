@@ -79,7 +79,7 @@ function SignupPage() {
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-600">
-          Already have an account? <a href="/login" className="font-medium text-pastel-green hover:text-pastel-green-dark">Login</a> {/* Link to Login */}
+          Already have an account? <Link to="/login" className="font-medium text-pastel-green hover:text-pastel-green-dark">Login</Link> {/* Link to Login */}
         </p>
 
       </div>

@@ -54,7 +54,7 @@ function LandingPage() {
                     <a href="#about" className="text-[#60a09b] hover:text-[#8e82b4]">contact</a>
                 </nav>
                 <a 
-                    href="/app"
+                    href="/login"
                     className="bg-[#60a09b] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-[#8e82b4] transition-colors"
                 >
                     Get Started
@@ -85,7 +85,7 @@ function LandingPage() {
                 Get Started
                 </Link>
                 <Link
-                to="#learn"
+                to="/login"
                 className="bg-[#fac6b1] hover:bg-[#d0c6de] text-[#213547] font-semibold rounded-full px-8 py-3 transition-colors duration-300"
                 >
                 Learn More
